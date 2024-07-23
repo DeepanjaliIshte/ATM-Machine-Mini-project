@@ -12,185 +12,185 @@
 <h2>Main Class: ATM</h2> 
 
 <h6>
-import java.util.HashMap;
-import java.util.Scanner;
-public class ATM
-{
-    public static void main(String[] args) {
-        ATMOP atmop_obj = new ATMOP();
-    }
-}
+import java.util.HashMap;<br>
+import java.util.Scanner;<br>
+public class ATM<br>
+{<br>
+    public static void main(String[] args) {<br>
+        ATMOP atmop_obj = new ATMOP();<br>
+    }<br>
+}<br>
 </h6>
-<h4>1. Imports: </h4>
-   - import java.util.HashMap;: Imports the HashMap class, which is used for storing key-value pairs.
-   - import java.util.Scanner;: Imports the Scanner class, which is used for taking input from the user.
+<h5>1. Imports: </h5>
+   - import java.util.HashMap;: Imports the HashMap class, which is used for storing key-value pairs.<br>
+   - import java.util.Scanner;: Imports the Scanner class, which is used for taking input from the user.<br>
 
-<h4>2. Public Class ATM:  </h4>
-   - Defines the main class ATM.
+<h5>2. Public Class ATM:  </h5>
+   - Defines the main class ATM.<br>
 
-<h4>3. Main Method: </h4>
-   - The entry point of the program.
-   - Creates an instance of ATMOP class, which will trigger the operations related to the ATM.
+<h5>3. Main Method: </h5>
+   - The entry point of the program.<br>
+   - Creates an instance of ATMOP class, which will trigger the operations related to the ATM.<br>
 
  <h2>Data Class</h2>
 
-<h6>class Data 
-       {
-          float balance;
-       }</h6>
+<h6>class Data <br>
+       {<br>
+          float balance;<br>
+       }</h6><br>
 
 
-<h4> 4. Data Class:</h4>
+<h5> 4. Data Class:</h5>
    - Defines a simple class Data with one attribute balance to store the balance of an account.<br>
 
 <h2> ATM Operations Class: ATMOP </h2>
 <h6>
-class ATMOP {
-    HashMap<Integer, Data> map = new HashMap<Integer, Data>();
-    Scanner scanner = new Scanner(System.in);
-
-    public ATMOP() {
-        System.out.println("Welcome to our ATM");
-        op();
-    }
+class ATMOP {<br>
+    HashMap<Integer, Data> map = new HashMap<Integer, Data>();<br>
+    Scanner scanner = new Scanner(System.in);<br>
+    public ATMOP() {<br>
+        System.out.println("Welcome to our ATM");<br>
+        op();<br>
+    }<br>
 </h6>
 
-<h4>5. ATMOP Class:</h4>
-   - Contains the main operations for the ATM.
+<h5>5. ATMOP Class:</h5>
+   - Contains the main operations for the ATM.<br>
 
-<h4>6. Attributes:</h4>
-   - HashMap<Integer, Data> map: A map to store account data with the pin code as the key and Data object as the value.
-   - Scanner scanner: An instance of Scanner for reading user input.
+<h5>6. Attributes:</h5>
+   - HashMap<Integer, Data> map: A map to store account data with the pin code as the key and Data object as the value.<br>
+   - Scanner scanner: An instance of Scanner for reading user input.<br>
 
-<h4>7. Constructor:</h4>
-   - Prints a welcome message.
-   - Calls the op() method to start the operation.
+<h5>7. Constructor:</h5>
+   - Prints a welcome message.<br>
+   - Calls the op() method to start the operation.<br>
 
 <h2> Operation Method: op</h2>
 <h6>
-    public void op() {
-        System.out.println("");
-        System.out.println("Enter your pin-code");
+    public void op() {<br>
+        System.out.println("");<br>
+        System.out.println("Enter your pin-code");<br>
+ 
+        int pincode = scanner.nextInt();<br>
 
-        int pincode = scanner.nextInt();
+        if (map.containsKey(pincode)) {<br>
+            Data obj = map.get(pincode);<br>
+            menu(obj);<br>
+        }<br>
+        else {<br>
+            System.out.println("");<br>
+            System.out.println("Please create account first");<br>
+            System.out.println("set your pin code");<br>
 
-        if (map.containsKey(pincode)) {
-            Data obj = map.get(pincode);
-            menu(obj);
-        } else {
-            System.out.println("");
-            System.out.println("Please create account first");
-            System.out.println("set your pin code");
+            int setpin = scanner.nextInt();<br>
 
-            int setpin = scanner.nextInt();
-
-            Data obj = new Data();
-            if (Integer.toString(setpin).length() < 5 && Integer.toString(setpin).length() > 2) {
-                obj.balance = 0;
-                map.put(setpin, obj);
-                menu(obj);
-            } else {
-                System.out.println("Invalid pin system terminate");
-            }
-        }
-    }
+            Data obj = new Data();<br>
+            if (Integer.toString(setpin).length() < 5 && Integer.toString(setpin).length() > 2) {<br>
+                obj.balance = 0;<br>
+                map.put(setpin, obj);<br>
+                menu(obj);<br>
+            } else {<br>
+                System.out.println("Invalid pin system terminate");<br>
+            }<br>
+        }<br>
+    }<br>
 </h6>
-<h4>8. op Method: </h4>
-   - Prompts the user to enter their pin code.
-   - If the pin code exists in the map, retrieves the Data object and calls menu(obj).
-   - If the pin code does not exist, prompts the user to set a new pin code.
-   - Validates the pin code length (must be 3-4 digits).
-   - Initializes a new account with balance 0 and adds it to the map.
-   - Calls menu(obj) with the new account.
+<h5>8. op Method: </h5>
+   - Prompts the user to enter their pin code.<br>
+   - If the pin code exists in the map, retrieves the Data object and calls menu(obj).<br>
+   - If the pin code does not exist, prompts the user to set a new pin code.<br>
+   - Validates the pin code length (must be 3-4 digits).<br>
+   - Initializes a new account with balance 0 and adds it to the map.<br>
+   - Calls menu(obj) with the new account.<br>
 
 <h2> Menu Method: menu</h2>
 <h6>
-    public void menu(Data obj) {
-        System.out.println("=====================================");
-        System.out.println("Please enter valid number");
-        System.out.println("1. Check balance");
-        System.out.println("2. Deposit money");
-        System.out.println("3. Withdraw money");
-        System.out.println("4. Check another account");
-        System.out.println("5. Exit");
+    public void menu(Data obj) {<br>
+        System.out.println("=====================================");<br>
+        System.out.println("Please enter valid number");<br>
+        System.out.println("1. Check balance");<br>
+        System.out.println("2. Deposit money");<br>
+        System.out.println("3. Withdraw money");<br>
+        System.out.println("4. Check another account");<br>
+        System.out.println("5. Exit");<br>
 
-        int x = scanner.nextInt();
+        int x = scanner.nextInt();<br>
 
-        if (x == 1) {
-            check_balance(obj);
-        } else if (x == 2) {
-            deposit(obj);
-        } else if (x == 3) {
-            withdraw(obj);
-        } else if (x == 4) {
-            op();
-        } else if (x == 5) {
-            System.out.println("Thank You...!!...");
-            System.out.println("");
-            op();
-        } else {
-            System.out.println("Please enter the valid number");
-            System.out.println("");
-            menu(obj);
-        }
-    }
+        if (x == 1) {<br>
+            check_balance(obj);<br>
+        } else if (x == 2) {<br>
+            deposit(obj);<br>
+        } else if (x == 3) {<br>
+            withdraw(obj);<br>
+        } else if (x == 4) {<br>
+            op();<br>
+        } else if (x == 5) {<br>
+            System.out.println("Thank You...!!...");<br>
+            System.out.println("");<br>
+            op();<br>
+        } else {<br>
+            System.out.println("Please enter the valid number");<br>
+            System.out.println("");<br>
+            menu(obj);<br>
+        }<br>
+    }<br>
 </h6>
 
-<h4>9. menu Method:</h4>
-   - Displays the ATM menu.
-   - Prompts the user to choose an option.
-   - Calls the corresponding method based on the user's choice.
-   - Loops back to the menu if the input is invalid.
+<h5>9. menu Method:</h5>
+   - Displays the ATM menu.<br>
+   - Prompts the user to choose an option.<br>
+   - Calls the corresponding method based on the user's choice.<br>
+   - Loops back to the menu if the input is invalid.<br>
 
  <h2>Check Balance Method: check_balance</h2>
 
-    private void check_balance(Data obj) {
-        System.out.println("your balance " + obj.balance);
-        System.out.println("");
-        menu(obj);
-    }
+    private void check_balance(Data obj) {<br>
+        System.out.println("your balance " + obj.balance);<br>
+        System.out.println("");<br>
+        menu(obj);<br>
+    }<br>
 
 
-<h4>10. check_balance Method:</h4>
+<h5>10. check_balance Method:</h5><br>
     - Prints the current balance of the account.<br>
     - Calls menu(obj) to display the menu again.<br>
 
   <h2> Deposit Method: deposit</h2>
 <h6>
-    private void deposit(Data obj) {
-        System.out.println("Enter your amount ");
-        float a = scanner.nextFloat();
-        obj.balance = obj.balance + a;
-        System.out.println("Amount deposited successfully!!");
-        System.out.println("");
-        menu(obj);
-    }
+    private void deposit(Data obj) {<br>
+        System.out.println("Enter your amount ");<br>
+        float a = scanner.nextFloat();<br>
+        obj.balance = obj.balance + a;<br>
+        System.out.println("Amount deposited successfully!!");<br>
+        System.out.println("");<br>
+        menu(obj);<br>
+    }<br>
 </h6>
 
-<h4>11. deposit Method: </h4>
-    - Prompts the user to enter an amount to deposit.
-    - Adds the amount to the account balance.
-    - Prints a success message.
-    - Calls menu(obj) to display the menu again.
+<h5>11. deposit Method: </h5>
+    - Prompts the user to enter an amount to deposit.<br>
+    - Adds the amount to the account balance.<br>
+    - Prints a success message.<br>
+    - Calls menu(obj) to display the menu again.<br>
 
 <h2> Withdraw Method: withdraw</h2>
 <h6>
-    private void withdraw(Data obj) {
-        System.out.println("Enter your Amount");
-        float a = scanner.nextFloat();
-        if (obj.balance >= a) {
-            obj.balance = obj.balance - a;
-            System.out.println("Amount withdrawn successfully!!");
-            System.out.println("");
-        } else {
-            System.out.println("Insufficient balance");
-        }
-        menu(obj);
-    }
-}
+    private void withdraw(Data obj) {<br>
+        System.out.println("Enter your Amount");<br>
+        float a = scanner.nextFloat();<br>
+        if (obj.balance >= a) {<br>
+            obj.balance = obj.balance - a;<br>
+            System.out.println("Amount withdrawn successfully!!");<br>
+            System.out.println("");<br>
+        } else {<br>
+            System.out.println("Insufficient balance");<br>
+        }<br>
+        menu(obj);<br>
+    }<br>
+}<br>
 </h6>
 
-<h4>12. withdraw Method:</h4>
+<h5>12. withdraw Method:</h5>
     - Prompts the user to enter an amount to withdraw.</br>
     - Checks if the account has sufficient balance.</br>
     - If sufficient, deducts the amount from the balance and prints a success message.</br>
