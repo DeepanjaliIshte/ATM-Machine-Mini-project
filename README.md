@@ -1,8 +1,17 @@
- ATM-Machine-Mini-project
+ ## ATM-Machine-Mini-project
 
- Main Class: ATM
+<h2>Summary</h2>
 
+- The ATM class contains the main method which initializes the ATMOP object.</br>
+- The Data class holds the account balance.</br>
+- The ATMOP class manages the ATM operations, including checking balance, depositing, and withdrawing money.</br>
+- The op method handles account creation and pin validation.</br>
+- The menu method displays the ATM menu and calls the appropriate method based on user input.</br>
+- Helper methods (check_balance, deposit, withdraw) perform specific tasks and loop back to the menu for continuous operation.</br>
 
+<h2>Main Class: ATM</h2> 
+
+<h5>
 import java.util.HashMap;
 import java.util.Scanner;
 public class ATM
@@ -11,7 +20,7 @@ public class ATM
         ATMOP atmop_obj = new ATMOP();
     }
 }
-
+</h5>
 <h3>1. Imports: </h3>
    - import java.util.HashMap;: Imports the HashMap class, which is used for storing key-value pairs.
    - import java.util.Scanner;: Imports the Scanner class, which is used for taking input from the user.
@@ -23,19 +32,19 @@ public class ATM
    - The entry point of the program.
    - Creates an instance of ATMOP class, which will trigger the operations related to the ATM.
 
- Data Class
+ <h2>Data Class</h2>
 
-java
-class Data {
-    float balance;
-}
+<h5>class Data 
+       {
+          float balance;
+       }</h5>
 
 
 <h3> 4. Data Class:</h3>
    - Defines a simple class Data with one attribute balance to store the balance of an account.<br>
 
 <h2> ATM Operations Class: ATMOP </h2>
-
+<h5>
 class ATMOP {
     HashMap<Integer, Data> map = new HashMap<Integer, Data>();
     Scanner scanner = new Scanner(System.in);
@@ -44,7 +53,7 @@ class ATMOP {
         System.out.println("Welcome to our ATM");
         op();
     }
-
+</h5>
 
 <h3>5. ATMOP Class:</h3>
    - Contains the main operations for the ATM.
@@ -58,7 +67,7 @@ class ATMOP {
    - Calls the op() method to start the operation.
 
 <h2> Operation Method: op</h2>
-
+<h5>
     public void op() {
         System.out.println("");
         System.out.println("Enter your pin-code");
@@ -85,8 +94,7 @@ class ATMOP {
             }
         }
     }
-
-
+</h5>
 <h3>8. op Method: </h3>
    - Prompts the user to enter their pin code.
    - If the pin code exists in the map, retrieves the Data object and calls menu(obj).
@@ -96,6 +104,7 @@ class ATMOP {
    - Calls menu(obj) with the new account.
 
 <h2> Menu Method: menu</h2>
+<h5>
     public void menu(Data obj) {
         System.out.println("=====================================");
         System.out.println("Please enter valid number");
@@ -125,7 +134,7 @@ class ATMOP {
             menu(obj);
         }
     }
-
+</h5>
 
 <h3>9. menu Method:</h3>
    - Displays the ATM menu.
@@ -142,12 +151,12 @@ class ATMOP {
     }
 
 
-10. check_balance Method:
-    - Prints the current balance of the account.
-    - Calls menu(obj) to display the menu again.
+<h3>10. check_balance Method:</h3>
+    - Prints the current balance of the account.<br>
+    - Calls menu(obj) to display the menu again.<br>
 
   <h2> Deposit Method: deposit</h2>
-
+<h5>
     private void deposit(Data obj) {
         System.out.println("Enter your amount ");
         float a = scanner.nextFloat();
@@ -156,17 +165,16 @@ class ATMOP {
         System.out.println("");
         menu(obj);
     }
+</h5>
 
-
-11. deposit Method:
+<h3>11. deposit Method: </h3>
     - Prompts the user to enter an amount to deposit.
     - Adds the amount to the account balance.
     - Prints a success message.
     - Calls menu(obj) to display the menu again.
 
- Withdraw Method: withdraw
-
-java
+<h2> Withdraw Method: withdraw</h2>
+<h5>
     private void withdraw(Data obj) {
         System.out.println("Enter your Amount");
         float a = scanner.nextFloat();
@@ -180,20 +188,12 @@ java
         menu(obj);
     }
 }
+</h5>
 
-
-12. withdraw Method:
+<h3>12. withdraw Method:</h3>
     - Prompts the user to enter an amount to withdraw.</br>
     - Checks if the account has sufficient balance.</br>
     - If sufficient, deducts the amount from the balance and prints a success message.</br>
     - If not sufficient, prints an "Insufficient balance" message.</br>
     - Calls menu(obj) to display the menu again.</br>
 
-<h3>Summary</h3>
-
-- The ATM class contains the main method which initializes the ATMOP object.</br>
-- The Data class holds the account balance.</br>
-- The ATMOP class manages the ATM operations, including checking balance, depositing, and withdrawing money.</br>
-- The op method handles account creation and pin validation.</br>
-- The menu method displays the ATM menu and calls the appropriate method based on user input.</br>
-- Helper methods (check_balance, deposit, withdraw) perform specific tasks and loop back to the menu for continuous operation.</br>
