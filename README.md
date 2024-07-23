@@ -38,7 +38,7 @@ public class ATM<br>
 <h6>class Data <br>
        {<br>
           float balance;<br>
-       }</h6><br>
+       }</h6>
        
 <h4> 4. Data Class:</h4>
    - Defines a simple class Data with one attribute balance to store the balance of an account.<br>
