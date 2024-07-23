@@ -32,14 +32,14 @@ public class ATM<br>
    - The entry point of the program.<br>
    - Creates an instance of ATMOP class, which will trigger the operations related to the ATM.<br>
 
- <h2>Data Class</h2>
 
+ <h2>Data Class</h2>
+ 
 <h6>class Data <br>
        {<br>
           float balance;<br>
        }</h6><br>
-
-
+       
 <h4> 4. Data Class:</h4>
    - Defines a simple class Data with one attribute balance to store the balance of an account.<br>
 
@@ -54,6 +54,7 @@ class ATMOP {<br>
     }<br>
 </h6>
 
+
 <h4>5. ATMOP Class:</h4>
    - Contains the main operations for the ATM.<br>
 
@@ -64,6 +65,8 @@ class ATMOP {<br>
 <h4>7. Constructor:</h4>
    - Prints a welcome message.<br>
    - Calls the op() method to start the operation.<br>
+
+
 
 <h2> Operation Method: op</h2>
 <h6>
@@ -102,6 +105,7 @@ class ATMOP {<br>
    - Validates the pin code length (must be 3-4 digits).<br>
    - Initializes a new account with balance 0 and adds it to the map.<br>
    - Calls menu(obj) with the new account.<br>
+
 
 <h2> Menu Method: menu</h2>
 <h6>
@@ -142,6 +146,7 @@ class ATMOP {<br>
    - Calls the corresponding method based on the user's choice.<br>
    - Loops back to the menu if the input is invalid.<br>
 
+
  <h2>Check Balance Method: check_balance</h2>
 
     private void check_balance(Data obj) {<br>
@@ -154,6 +159,7 @@ class ATMOP {<br>
 <h4>10. check_balance Method:</h4><br>
     - Prints the current balance of the account.<br>
     - Calls menu(obj) to display the menu again.<br>
+
 
   <h2> Deposit Method: deposit</h2>
 <h6>
@@ -172,6 +178,7 @@ class ATMOP {<br>
     - Adds the amount to the account balance.<br>
     - Prints a success message.<br>
     - Calls menu(obj) to display the menu again.<br>
+
 
 <h2> Withdraw Method: withdraw</h2>
 <h6>
