@@ -21,14 +21,14 @@ public class ATM<br>
     }<br>
 }<br>
 </h6>
-<h5>1. Imports: </h5>
+<h4>1. Imports: </h4>
    - import java.util.HashMap;: Imports the HashMap class, which is used for storing key-value pairs.<br>
    - import java.util.Scanner;: Imports the Scanner class, which is used for taking input from the user.<br>
 
-<h5>2. Public Class ATM:  </h5>
+<h4>2. Public Class ATM:  </h4>
    - Defines the main class ATM.<br>
 
-<h5>3. Main Method: </h5>
+<h4>3. Main Method: </h4>
    - The entry point of the program.<br>
    - Creates an instance of ATMOP class, which will trigger the operations related to the ATM.<br>
 
@@ -40,7 +40,7 @@ public class ATM<br>
        }</h6><br>
 
 
-<h5> 4. Data Class:</h5>
+<h4> 4. Data Class:</h4>
    - Defines a simple class Data with one attribute balance to store the balance of an account.<br>
 
 <h2> ATM Operations Class: ATMOP </h2>
@@ -54,14 +54,14 @@ class ATMOP {<br>
     }<br>
 </h6>
 
-<h5>5. ATMOP Class:</h5>
+<h4>5. ATMOP Class:</h4>
    - Contains the main operations for the ATM.<br>
 
-<h5>6. Attributes:</h5>
+<h4>6. Attributes:</h4>
    - HashMap<Integer, Data> map: A map to store account data with the pin code as the key and Data object as the value.<br>
    - Scanner scanner: An instance of Scanner for reading user input.<br>
 
-<h5>7. Constructor:</h5>
+<h4>7. Constructor:</h4>
    - Prints a welcome message.<br>
    - Calls the op() method to start the operation.<br>
 
@@ -95,7 +95,7 @@ class ATMOP {<br>
         }<br>
     }<br>
 </h6>
-<h5>8. op Method: </h5>
+<h4>8. op Method: </h4>
    - Prompts the user to enter their pin code.<br>
    - If the pin code exists in the map, retrieves the Data object and calls menu(obj).<br>
    - If the pin code does not exist, prompts the user to set a new pin code.<br>
@@ -136,7 +136,7 @@ class ATMOP {<br>
     }<br>
 </h6>
 
-<h5>9. menu Method:</h5>
+<h4>9. menu Method:</h4>
    - Displays the ATM menu.<br>
    - Prompts the user to choose an option.<br>
    - Calls the corresponding method based on the user's choice.<br>
@@ -151,7 +151,7 @@ class ATMOP {<br>
     }<br>
 
 
-<h5>10. check_balance Method:</h5><br>
+<h4>10. check_balance Method:</h4><br>
     - Prints the current balance of the account.<br>
     - Calls menu(obj) to display the menu again.<br>
 
@@ -167,7 +167,7 @@ class ATMOP {<br>
     }<br>
 </h6>
 
-<h5>11. deposit Method: </h5>
+<h4>11. deposit Method: </h4>
     - Prompts the user to enter an amount to deposit.<br>
     - Adds the amount to the account balance.<br>
     - Prints a success message.<br>
@@ -190,7 +190,7 @@ class ATMOP {<br>
 }<br>
 </h6>
 
-<h5>12. withdraw Method:</h5>
+<h4>12. withdraw Method:</h4>
     - Prompts the user to enter an amount to withdraw.</br>
     - Checks if the account has sufficient balance.</br>
     - If sufficient, deducts the amount from the balance and prints a success message.</br>
